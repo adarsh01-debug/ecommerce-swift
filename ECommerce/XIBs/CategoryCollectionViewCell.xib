@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryViewCell" id="gTV-IL-0wX" customClass="CategoryCollectionViewCell" customModule="ECommerce" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="253" height="136"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="253" height="136"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="laptopcomputer.and.iphone" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="B8v-u3-LOu">
+                        <rect key="frame" x="58.5" y="2" width="136" height="91"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7n-ud-8YA">
+                        <rect key="frame" x="66.5" y="102" width="120" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="X7n-ud-8YA" firstAttribute="top" secondItem="B8v-u3-LOu" secondAttribute="bottom" constant="7" id="0OZ-A9-nXq"/>
+                <constraint firstItem="X7n-ud-8YA" firstAttribute="centerX" secondItem="B8v-u3-LOu" secondAttribute="centerX" id="3lb-Da-iNu"/>
+                <constraint firstItem="B8v-u3-LOu" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="1:1" id="4hp-9g-XsZ"/>
+                <constraint firstItem="B8v-u3-LOu" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="aV7-xq-R8s"/>
+                <constraint firstItem="B8v-u3-LOu" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.7" id="c1Z-Vp-S7b"/>
+                <constraint firstItem="B8v-u3-LOu" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="z5I-g6-00j"/>
+            </constraints>
+            <size key="customSize" width="253" height="136"/>
+            <connections>
+                <outlet property="categoryImage" destination="B8v-u3-LOu" id="Rve-Iz-oMV"/>
+                <outlet property="categoryName" destination="X7n-ud-8YA" id="Hng-Fk-c79"/>
+            </connections>
+            <point key="canvasLocation" x="242.75362318840581" y="98.4375"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="laptopcomputer.and.iphone" catalog="system" width="128" height="74"/>
+    </resources>
+</document>
