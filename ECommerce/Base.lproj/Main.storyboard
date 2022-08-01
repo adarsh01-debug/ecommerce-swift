@@ -286,13 +286,13 @@
         <!--Cart View Controller-->
         <scene sceneID="bFK-f0-oBm">
             <objects>
-                <viewController id="5lt-x6-LWe" customClass="CartViewController" customModule="ECommerce" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CartViewController" id="5lt-x6-LWe" customClass="CartViewController" customModule="ECommerce" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cgl-yW-X1V">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nlb-23-Ees">
-                                <rect key="frame" x="10" y="10" width="394" height="788"/>
+                                <rect key="frame" x="10" y="54" width="394" height="798"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GZZ-Wq-pg5">
                                     <size key="itemSize" width="128" height="128"/>
@@ -401,7 +401,7 @@
                                 <rect key="frame" x="10" y="281.5" width="65" height="30"/>
                                 <state key="normal" title="Your Cart"/>
                                 <connections>
-                                    <segue destination="5lt-x6-LWe" kind="show" id="hH4-k0-8cq"/>
+                                    <action selector="cartButton:" destination="Y5a-2U-tz7" eventType="touchUpInside" id="l1r-eo-zT6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GaW-2D-dF1">

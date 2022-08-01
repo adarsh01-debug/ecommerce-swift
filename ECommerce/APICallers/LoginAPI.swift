@@ -7,9 +7,6 @@
 
 import Foundation
 
-
-import Foundation
-
 class LoginAPI{
     
     let apiURL = "http://10.20.4.157:8080/user/login/"

@@ -48,6 +48,7 @@ class ViewController: UIViewController, UITextFieldDelegate, Response {
         DispatchQueue.main.async {
             if status, let productViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ProductViewController") as? ProductViewController {
                 
+                productViewController.id = self.loggedInUser?.id
                 productViewController.email = self.loggedInUser?.emailId
                 productViewController.name = self.loggedInUser?.name
                 productViewController.phoneNumber = self.loggedInUser?.mobileNumber

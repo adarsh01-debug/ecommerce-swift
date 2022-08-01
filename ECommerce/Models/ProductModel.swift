@@ -8,15 +8,15 @@
 import Foundation
 
 struct ProductModel: Codable {
-    let id: Int
-    let category: Category
-    let brand: String
-    let merchantID, price, stock, rating: Int
-    let camera, ram: Int
+    let id: Int?
+    let category: Category?
+    let brand: String?
+    let merchantID, price, stock, rating: Int?
+    let camera, ram: Int?
     let processor, dialShape, headphoneType, color: String?
     let screenType: String?
-    let screenSize: Int
-    let image: String
+    let screenSize: Int?
+    let image: String?
     let starpMaterial: String?
 
     enum CodingKeys: String, CodingKey {
@@ -35,6 +35,6 @@ enum Category: String, Codable, CaseIterable {
 }
 
 struct CategoryModel {
-    let image: String
-    let name: String
+    let image: String?
+    let name: String?
 }

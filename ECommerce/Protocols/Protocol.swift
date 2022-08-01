@@ -16,3 +16,11 @@ protocol Response {
     func sendUserInfo(user: UserModel)
     func sendStatus(status: Bool)
 }
+
+protocol CartManagerDelegate: AnyObject {
+    func userCartData(cart: [CartModel])
+}
+
+protocol SingleProductManagerDelegate: AnyObject {
+    func singleProductData(product: ProductModel)
+}

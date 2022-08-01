@@ -9,6 +9,7 @@ import UIKit
 
 class ProductViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, ProductManagerDelegate {
     
+    var id: Int?
     var name: String?
     var email: String?
     var phoneNumber: String?
@@ -68,23 +69,25 @@ class ProductViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         profileName.text = name
         profileEmail.text = email
+        
+//        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: nil, action: nil)
     }
     
     func segregateProducts() -> Void {
         headPhoneProducts = productsData?.filter({ (item) -> Bool in
-            return item.category.rawValue == "headphone"
+            return item.category?.rawValue == "headphone"
         })
         laptopProducts = productsData?.filter({ (item) -> Bool in
-            return item.category.rawValue == "laptop"
+            return item.category?.rawValue == "laptop"
         })
         mobileProducts = productsData?.filter({ (item) -> Bool in
-            return item.category.rawValue == "mobile"
+            return item.category?.rawValue == "mobile"
         })
         televisionProducts = productsData?.filter({ (item) -> Bool in
-            return item.category.rawValue == "television"
+            return item.category?.rawValue == "television"
         })
         watchProducts = productsData?.filter({ (item) -> Bool in
-            return item.category.rawValue == "watch"
+            return item.category?.rawValue == "watch"
         })
     }
 
@@ -94,13 +97,6 @@ class ProductViewController: UIViewController, UICollectionViewDelegate, UIColle
             self.productsData = products
             self.dataSource = products
             self.segregateProducts()
-            self.productCollectionView.reloadData()
-        }
-    }
-    
-    func onClickUpdateData(products: [ProductModel]) {
-        DispatchQueue.main.async {
-            self.dataSource = products
             self.productCollectionView.reloadData()
         }
     }
@@ -150,7 +146,7 @@ class ProductViewController: UIViewController, UICollectionViewDelegate, UIColle
             
             cell.backgroundColor = .clear
             
-            if let urlLink = URL(string: categoryData[indexPath.row].image) {
+            if let urlLink = URL(string: categoryData[indexPath.row].image ?? "https://www.istockphoto.com/photo/high-angle-view-of-a-lake-and-forest-gm1337232523-418194736?utm_source=pixabay&utm_medium=affiliate&utm_campaign=SRP_image_sponsored&utm_content=http%3A%2F%2Fpixabay.com%2Fimages%2Fsearch%2Fnature%2F&utm_term=nature") {
                 cell.categoryImage.load(url: urlLink)
             }
         
@@ -215,27 +211,27 @@ class ProductViewController: UIViewController, UICollectionViewDelegate, UIColle
                 switch categorySelected {
                 case "Headphones":
                     dataSource = headPhoneProducts
-                    self.onClickUpdateData(products: dataSource ?? [])
+                    self.searchedData(products: dataSource ?? [])
                     productCollectionView.reloadData()
                 case "Laptops":
                     dataSource = laptopProducts
-                    self.onClickUpdateData(products: dataSource ?? [])
+                    self.searchedData(products: dataSource ?? [])
                     productCollectionView.reloadData()
                 case "Mobiles":
                     dataSource = mobileProducts
-                    self.onClickUpdateData(products: dataSource ?? [])
+                    self.searchedData(products: dataSource ?? [])
                     productCollectionView.reloadData()
                 case "Television":
                     dataSource = televisionProducts
-                    self.onClickUpdateData(products: dataSource ?? [])
+                    self.searchedData(products: dataSource ?? [])
                     productCollectionView.reloadData()
                 case "Watches":
                     dataSource = watchProducts
-                    self.onClickUpdateData(products: dataSource ?? [])
+                    self.searchedData(products: dataSource ?? [])
                     productCollectionView.reloadData()
                 case "All":
                     dataSource = productsData
-                    self.onClickUpdateData(products: dataSource ?? [])
+                    self.searchedData(products: dataSource ?? [])
                     productCollectionView.reloadData()
                 default:
                     print("NO DATA")
@@ -244,6 +240,18 @@ class ProductViewController: UIViewController, UICollectionViewDelegate, UIColle
             if let productDetailViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ProductDetailViewController") as? ProductDetailViewController {
 
                 let data = dataSource?[indexPath.row]
+                
+                if let userId = id {
+                    productDetailViewController.userId = userId
+                }
+                
+                if let prodId = data?.id {
+                    productDetailViewController.productId = prodId
+                }
+                
+                if let merchantId = data?.merchantID {
+                    productDetailViewController.merchantId = merchantId
+                }
                 
                 if let image = data?.image {
                     productDetailViewController.productImage = image
@@ -338,6 +346,16 @@ class ProductViewController: UIViewController, UICollectionViewDelegate, UIColle
             profileViewController.name = name
             profileViewController.phoneNumber = phoneNumber
             self.navigationController?.pushViewController(profileViewController, animated: true)
+        }
+    }
+    
+    @IBAction func cartButton(_ sender: Any) {
+        if let cartViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "CartViewController") as? CartViewController {
+            
+            if let id = id {
+                cartViewController.userId = id
+            }
+            self.navigationController?.pushViewController(cartViewController, animated: true)
         }
     }
 }

@@ -11,6 +11,8 @@ class ProductDetailViewController: UIViewController {
     
     var productImage, productCategory, productBrand, productPrice, productRating, productStock, productCamera, productRam, productProcessor, productDailShape, productHeadphoneType, productColor, productScreenType, productScreenSize: String?
     
+    var productId, merchantId: Int?
+    var userId: Int?
     
     @IBOutlet var pImage: UIImageView!
     @IBOutlet var category: UILabel!
@@ -63,7 +65,37 @@ class ProductDetailViewController: UIViewController {
     
     
     @IBAction func addToCartAction(_ sender: Any) {
+        let stringURL = "http://10.20.4.110:9090/cart"
         
+        guard let url = URL(string: stringURL) else {
+            print("Problem in url string")
+            return
+        }
+
+        print(userId!)
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        let body: [String: AnyHashable] = [
+            "userId": userId!,
+            "productId": productId!,
+            "quantity": 1,
+            "merchantId": merchantId!,
+        ]
+
+        request.httpBody = try?JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
+
+        let task = URLSession.shared.dataTask(with: request) {data, _, error in
+            if (error != nil) {
+                print("Error in session")
+                return
+            } else {
+                print("added to cart")
+            }
+        }
+        task.resume()
+        print("clicked")
     }
     
     func updateLabels() {
