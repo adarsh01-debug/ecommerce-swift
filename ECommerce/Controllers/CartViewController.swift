@@ -38,9 +38,14 @@ class CartViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func userCartData(cart: [CartModel]) {
         DispatchQueue.main.async {
             self.cartModel = cart
-            if let cartModel = self.cartModel {
+            self.userCartProducts?.removeAll()
+            if let cartModel = self.cartModel , !cartModel.isEmpty {
                 for item in cartModel {
                     self.getProduct(productId: item.productID)
+                }
+            } else {
+                DispatchQueue.main.async {
+                        self.cartCollectionView.reloadData()
                 }
             }
         }
@@ -50,13 +55,24 @@ class CartViewController: UIViewController, UICollectionViewDelegate, UICollecti
         singleProduct.fecthProductDetails(productId: productId)
     }
     
+    func reloadCart() {
+        if let cartModel = self.cartModel {
+            print(cartModel)
+            //userCartData(cart: cartModel)
+            cartAPI.fecthCartDetails(userId: userId!)
+            
+        }
+    }
+    
     func singleProductData(product: ProductModel) {
         self.userCartProducts?.append(product)
         if let brand = self.userCartProducts?[0].brand {
             print("00000" + brand)
         }
         DispatchQueue.main.async {
-            self.cartCollectionView.reloadData()
+            if self.cartModel?.count == self.userCartProducts?.count {
+                self.cartCollectionView.reloadData()
+            }
         }
     }
     
@@ -73,6 +89,7 @@ class CartViewController: UIViewController, UICollectionViewDelegate, UICollecti
         guard let cell = cartCollectionView.dequeueReusableCell(withReuseIdentifier: kCellIdentifier, for: indexPath) as? CartCollectionViewCell else {
             return UICollectionViewCell()
         }
+        cell.delegate = self
         
         let data = userCartProducts?[indexPath.row]
         
@@ -80,6 +97,12 @@ class CartViewController: UIViewController, UICollectionViewDelegate, UICollecti
             cell.cartImage.load(url: URL(string: image)!)
         }
         cell.cartName.text = data?.brand
+        
+        if let id = cartModel?[indexPath.row].id {
+            cell.cartId = id
+        } else {
+            cell.cartId = nil
+        }
         
         if let price = data?.price {
             cell.cartPrice.text = "$ \(String(describing: price))"

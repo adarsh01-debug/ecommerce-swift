@@ -146,7 +146,7 @@ class ProductViewController: UIViewController, UICollectionViewDelegate, UIColle
             
             cell.backgroundColor = .clear
             
-            if let urlLink = URL(string: categoryData[indexPath.row].image ?? "https://www.istockphoto.com/photo/high-angle-view-of-a-lake-and-forest-gm1337232523-418194736?utm_source=pixabay&utm_medium=affiliate&utm_campaign=SRP_image_sponsored&utm_content=http%3A%2F%2Fpixabay.com%2Fimages%2Fsearch%2Fnature%2F&utm_term=nature") {
+            if let urlLink = URL(string: categoryData[indexPath.row].image ?? "") {
                 cell.categoryImage.load(url: urlLink)
             }
         

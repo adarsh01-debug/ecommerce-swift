@@ -19,6 +19,7 @@ protocol Response {
 
 protocol CartManagerDelegate: AnyObject {
     func userCartData(cart: [CartModel])
+    func reloadCart()
 }
 
 protocol SingleProductManagerDelegate: AnyObject {

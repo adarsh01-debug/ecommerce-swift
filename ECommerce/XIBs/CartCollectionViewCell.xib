@@ -46,14 +46,23 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8iV-f4-Ulc">
+                        <rect key="frame" x="272.5" y="130" width="142.5" height="22"/>
+                        <state key="normal" image="bin.xmark.fill" catalog="system"/>
+                        <connections>
+                            <action selector="deleteFromCart:" destination="gTV-IL-0wX" eventType="touchUpInside" id="qwx-P1-PCP"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstItem="eIU-g2-A5P" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.7" id="5mJ-rU-GMD"/>
+                <constraint firstItem="8iV-f4-Ulc" firstAttribute="leading" secondItem="G4C-a8-ceh" secondAttribute="trailing" constant="10" id="Dfo-O0-cdi"/>
                 <constraint firstItem="Hsy-bk-tIX" firstAttribute="leading" secondItem="eIU-g2-A5P" secondAttribute="trailing" constant="10" id="Isx-it-oCI"/>
                 <constraint firstItem="G4C-a8-ceh" firstAttribute="centerY" secondItem="rF4-ar-uLy" secondAttribute="centerY" id="KLs-qk-dw5"/>
                 <constraint firstItem="G4C-a8-ceh" firstAttribute="leading" secondItem="rF4-ar-uLy" secondAttribute="trailing" constant="10" id="ROQ-gv-wLR"/>
+                <constraint firstItem="8iV-f4-Ulc" firstAttribute="centerY" secondItem="G4C-a8-ceh" secondAttribute="centerY" id="Wul-kn-B54"/>
                 <constraint firstItem="n0A-X0-Arj" firstAttribute="top" secondItem="Hsy-bk-tIX" secondAttribute="bottom" constant="10" id="XYy-fw-Xiv"/>
                 <constraint firstItem="Hsy-bk-tIX" firstAttribute="top" secondItem="eIU-g2-A5P" secondAttribute="top" id="Z3o-C3-lSB"/>
                 <constraint firstItem="n0A-X0-Arj" firstAttribute="leading" secondItem="Hsy-bk-tIX" secondAttribute="leading" id="a2Z-Pl-beo"/>
@@ -64,6 +73,7 @@
                 <constraint firstItem="rF4-ar-uLy" firstAttribute="leading" secondItem="eIU-g2-A5P" secondAttribute="trailing" constant="10" id="oJu-4X-Ir4"/>
                 <constraint firstItem="eIU-g2-A5P" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="10" id="pg8-HP-Y1i"/>
                 <constraint firstItem="eIU-g2-A5P" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.3" id="r4N-5X-b2H"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="8iV-f4-Ulc" secondAttribute="trailing" constant="10" id="vDR-8J-rIl"/>
             </constraints>
             <size key="customSize" width="425" height="179"/>
             <connections>
@@ -77,6 +87,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="bin.xmark.fill" catalog="system" width="128" height="93"/>
         <image name="laptopcomputer" catalog="system" width="128" height="73"/>
     </resources>
 </document>
