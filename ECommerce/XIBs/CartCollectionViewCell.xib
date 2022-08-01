@@ -27,6 +27,9 @@
                     </label>
                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="rF4-ar-uLy">
                         <rect key="frame" x="147.5" y="125" width="94" height="32"/>
+                        <connections>
+                            <action selector="stepperAction:" destination="gTV-IL-0wX" eventType="valueChanged" id="TYk-wz-YjB"/>
+                        </connections>
                     </stepper>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4C-a8-ceh">
                         <rect key="frame" x="251.5" y="130.5" width="11" height="21"/>
@@ -48,6 +51,7 @@
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8iV-f4-Ulc">
                         <rect key="frame" x="272.5" y="130" width="142.5" height="22"/>
+                        <color key="tintColor" red="0.1215686275" green="0.18823529410000001" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                         <state key="normal" image="bin.xmark.fill" catalog="system"/>
                         <connections>
                             <action selector="deleteFromCart:" destination="gTV-IL-0wX" eventType="touchUpInside" id="qwx-P1-PCP"/>

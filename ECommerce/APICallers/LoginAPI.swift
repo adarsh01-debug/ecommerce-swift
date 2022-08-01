@@ -37,6 +37,8 @@ class LoginAPI{
                         if ((self?.validate(user: user.emailId, password: user.password)) != nil) {
                             self?.delegate?.sendUserInfo(user: user)
                             self?.delegate?.sendStatus(status: true)
+                        } else {
+                            self?.delegate?.sendStatus(status: false)
                         }
                     }
                 }
@@ -64,6 +66,7 @@ class LoginAPI{
         }
 
         if let userEmail = userEmail, let userPassword = userPassword, userEmail == email, userPassword == password {
+            //print(userPassword, password)
                 return true
         }
 

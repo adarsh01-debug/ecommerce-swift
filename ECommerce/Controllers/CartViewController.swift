@@ -58,7 +58,6 @@ class CartViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func reloadCart() {
         if let cartModel = self.cartModel {
             print(cartModel)
-            //userCartData(cart: cartModel)
             cartAPI.fecthCartDetails(userId: userId!)
             
         }
@@ -118,6 +117,10 @@ class CartViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         if let quantity = cartModel?[indexPath.row].quantity {
             cell.cartQuantity.text = "\(String(describing: quantity))"
+        }
+        
+        if let stock = data?.stock {
+            cell.productStock = stock
         }
     
         return cell

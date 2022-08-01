@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -20,6 +19,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="2Cg-Re-khp">
                                 <rect key="frame" x="103.5" y="99.5" width="207" height="176"/>
+                                <color key="tintColor" red="0.1215686275" green="0.18823529410000001" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username/email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="70v-QQ-sKO">
                                 <rect key="frame" x="20" y="297" width="374" height="34"/>
@@ -33,7 +33,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gla-Yd-9vi">
                                 <rect key="frame" x="83" y="405" width="248" height="36"/>
-                                <color key="backgroundColor" name="AccentColor"/>
+                                <color key="backgroundColor" red="0.12156862745098039" green="0.18823529411764706" blue="0.36862745098039218" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -56,7 +56,9 @@
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTN-uO-3NZ">
                                         <rect key="frame" x="224.5" y="0.0" width="149.5" height="50"/>
-                                        <state key="normal" title="Register here!"/>
+                                        <state key="normal" title="Register here!">
+                                            <color key="titleColor" red="0.1215686275" green="0.18823529410000001" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="registerHere:" destination="BYZ-38-t0r" eventType="touchUpInside" id="akT-3L-Fan"/>
                                         </connections>
@@ -92,7 +94,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CcL-fM-7wR">
-                        <barButtonItem key="leftBarButtonItem" image="bag.fill" catalog="system" id="QvH-9v-Zew"/>
+                        <barButtonItem key="leftBarButtonItem" image="bag.fill" catalog="system" id="QvH-9v-Zew">
+                            <color key="tintColor" red="0.1215686275" green="0.18823529410000001" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="loginButtonOutlet" destination="Gla-Yd-9vi" id="gfa-3M-eha"/>
@@ -114,6 +118,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="doc-hO-hWt">
                                 <rect key="frame" x="103.5" y="55.5" width="207" height="176"/>
+                                <color key="tintColor" red="0.1215686275" green="0.18823529410000001" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dRD-Ht-KFS">
                                 <rect key="frame" x="20" y="307" width="374" height="34"/>
@@ -132,7 +137,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8R-cF-Ncd">
                                 <rect key="frame" x="83" y="523" width="248" height="36"/>
-                                <color key="backgroundColor" name="AccentColor"/>
+                                <color key="backgroundColor" red="0.1215686275" green="0.18823529410000001" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Register">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -202,6 +207,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="LmW-zJ-Knm">
                                 <rect key="frame" x="103.5" y="55.5" width="207" height="176"/>
+                                <color key="tintColor" red="0.1215686275" green="0.18823529410000001" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkB-ku-HUi">
                                 <rect key="frame" x="80" y="253" width="324" height="21"/>
@@ -368,6 +374,7 @@
                                 <items>
                                     <navigationItem title="ElectroBay" id="gv7-ik-LLn">
                                         <barButtonItem key="leftBarButtonItem" title="Item" image="list.dash" catalog="system" id="JIa-iV-xZI">
+                                            <color key="tintColor" red="0.1215686275" green="0.18823529410000001" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="burgerMenu:" destination="Y5a-2U-tz7" id="zNd-KJ-bGU"/>
                                             </connections>
@@ -377,6 +384,7 @@
                             </navigationBar>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="YVf-cr-pbM">
                                 <rect key="frame" x="10" y="99.5" width="74.5" height="68.5"/>
+                                <color key="tintColor" red="0.1215686275" green="0.18823529410000001" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IwF-Z4-AUF">
                                 <rect key="frame" x="10" y="179.5" width="45" height="21"/>
@@ -392,21 +400,27 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUw-1d-PPe">
                                 <rect key="frame" x="10" y="241.5" width="44" height="30"/>
-                                <state key="normal" title="Profile"/>
+                                <state key="normal" title="Profile">
+                                    <color key="titleColor" red="0.1215686275" green="0.18823529410000001" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="profileButton:" destination="Y5a-2U-tz7" eventType="touchUpInside" id="Slc-1t-qKq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLx-WH-bWg">
                                 <rect key="frame" x="10" y="281.5" width="65" height="30"/>
-                                <state key="normal" title="Your Cart"/>
+                                <state key="normal" title="Your Cart">
+                                    <color key="titleColor" red="0.1215686275" green="0.18823529410000001" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="cartButton:" destination="Y5a-2U-tz7" eventType="touchUpInside" id="l1r-eo-zT6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GaW-2D-dF1">
                                 <rect key="frame" x="10" y="321.5" width="93" height="30"/>
-                                <state key="normal" title="Order History"/>
+                                <state key="normal" title="Order History">
+                                    <color key="titleColor" red="0.1215686275" green="0.18823529410000001" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="K7G-h1-I8S" kind="show" id="Bx1-u2-7jw"/>
                                 </connections>
@@ -420,6 +434,7 @@
                                     </searchBar>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8WW-X1-IZC">
                                         <rect key="frame" x="372" y="27" width="32" height="22"/>
+                                        <color key="tintColor" red="0.1215686275" green="0.18823529410000001" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Button" image="magnifyingglass" catalog="system"/>
                                         <connections>
                                             <action selector="searchButton:" destination="Y5a-2U-tz7" eventType="touchUpInside" id="2zj-ZM-uoP"/>
@@ -677,7 +692,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQy-zD-ECD">
                                 <rect key="frame" x="83" y="816" width="248" height="36"/>
-                                <color key="backgroundColor" name="AccentColor"/>
+                                <color key="backgroundColor" red="0.1215686275" green="0.18823529410000001" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Add To Cart">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -804,9 +819,6 @@
         <image name="list.dash" catalog="system" width="128" height="85"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

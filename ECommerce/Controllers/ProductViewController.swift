@@ -355,6 +355,7 @@ class ProductViewController: UIViewController, UICollectionViewDelegate, UIColle
             if let id = id {
                 cartViewController.userId = id
             }
+            
             self.navigationController?.pushViewController(cartViewController, animated: true)
         }
     }

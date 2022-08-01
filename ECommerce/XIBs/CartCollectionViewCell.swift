@@ -14,18 +14,44 @@ class CartCollectionViewCell: UICollectionViewCell {
     var cartView = CartViewController()
     
     var delegate: CartManagerDelegate?
+    var productStock: Int?
     
     @IBOutlet var cartImage: UIImageView!
     @IBOutlet var cartName: UILabel!
     @IBOutlet var cartPrice: UILabel!
     @IBOutlet var cartRating: UILabel!
     @IBOutlet var cartQuantity: UILabel!
+    //@IBOutlet var stepperOutlet: UIStepper!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+//        stepperOutlet.autorepeat = true
+//        stepperOutlet.isContinuous = true
+//
+//        if let maxValue = productStock {
+//            stepperOutlet.maximumValue = Double(maxValue)
+//            stepperOutlet.minimumValue = 1
+//        } else {
+//            stepperOutlet.maximumValue = 0
+//            stepperOutlet.minimumValue = 0
+//        }
     }
     
+    
+    @IBAction func stepperAction(_ sender: UIStepper) {
+        
+        if let stock = productStock {
+            if sender.value > 0, sender.value <= Double(stock) {
+                let val = String(format: "%.0f", sender.value)
+                cartQuantity.text = String(val)
+            } else if sender.value >= Double(stock){
+                sender.value = Double(stock)
+            } else {
+                sender.value = 1
+            }
+        }
+    }
     
     @IBAction func deleteFromCart(_ sender: Any) {
         if let id = cartId {

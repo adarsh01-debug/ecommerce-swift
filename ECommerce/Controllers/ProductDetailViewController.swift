@@ -95,7 +95,6 @@ class ProductDetailViewController: UIViewController {
             }
         }
         task.resume()
-        print("clicked")
     }
     
     func updateLabels() {
