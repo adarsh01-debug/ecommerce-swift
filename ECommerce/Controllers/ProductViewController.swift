@@ -356,8 +356,15 @@ class ProductViewController: UIViewController, UICollectionViewDelegate, UIColle
                 cartViewController.userId = id
             }
             
+            if let email = email {
+                cartViewController.email = email
+            }
+            
             self.navigationController?.pushViewController(cartViewController, animated: true)
         }
     }
+    
+    @IBAction func orderHistory(_ sender: Any) {
+        
+    }
 }
-

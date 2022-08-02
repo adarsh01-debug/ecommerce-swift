@@ -12,14 +12,24 @@ class CartViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var cartModel: [CartModel]?
     var cartAPI = CartAPI()
     
+    var orderAPI = OrderAPI()
+    
     var singleProduct = SingleProductAPI()
     var userCartProducts: [ProductModel]? = []
+    
+    var productId: [Int] = []
+    var quantity: [Int] = []
+    var merchantId: [Int] = []
+    var cartId: [Int] = []
     
     let kCellIdentifier = "CartCollectionViewCell"
     
     var userId: Int?
+    var email: String?
     
     @IBOutlet var cartCollectionView: UICollectionView!
+    @IBOutlet var checkoutOutlet: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +43,73 @@ class CartViewController: UIViewController, UICollectionViewDelegate, UICollecti
         cartAPI.fecthCartDetails(userId: userId!)
         
         singleProduct.delegate = self
+        
+        checkoutOutlet.layer.masksToBounds = true
+        checkoutOutlet.layer.cornerRadius = 10.0
+
+    }
+    
+    
+    @IBAction func checkoutAction(_ sender: Any) {
+        if let orderViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "OrderViewController") as? OrderViewController {
+
+            makeOrderModel()
+            orderAPI.postOrderData(userId: userId!, productId: productId, quantity: quantity, merchantId: merchantId, cartId: cartId, email: email!)
+            
+            if let cartModel = self.cartModel {
+                for item in cartModel {
+                    emptyCart(cartId: item.id)
+                }
+            }
+            
+            DispatchQueue.main.async {
+                self.cartCollectionView.reloadData()
+            }
+            
+            orderViewController.userId = userId
+            orderViewController.productId = productId
+            orderViewController.quantity = quantity
+            orderViewController.merchantId = merchantId
+            orderViewController.cartId = cartId
+
+            self.navigationController?.pushViewController(orderViewController, animated: true)
+        }
+    }
+    
+    func makeOrderModel() {
+        if let userCartProducts = self.userCartProducts, let cartModel = self.cartModel {
+            for item in userCartProducts {
+                productId.append(item.id!)
+                merchantId.append(item.merchantID!)
+            }
+            
+            for item in cartModel {
+                quantity.append(item.quantity)
+                cartId.append(item.id)
+            }
+        }
+    }
+    
+    func emptyCart(cartId: Int?) {
+        if let id = cartId {
+            let stringURL = "http://10.20.4.110:9090/cart/\(id)"
+            guard let url = URL(string: stringURL) else {
+                print("Problem in url string")
+                return
+            }
+            var request = URLRequest(url: url)
+            request.httpMethod = "DELETE"
+            let task = URLSession.shared.dataTask(with: request) {data, _, error in
+                if (error != nil){
+                    print("Error in session")
+                    return
+                }
+                }
+                task.resume()
+            } else {
+                print("No id")
+        }
+        reloadCart()
     }
     
     func userCartData(cart: [CartModel]) {

@@ -23,48 +23,80 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "91D27D67-21F9-480D-8010-B03B8A8825B5"
-            shouldBeEnabled = "No"
+            uuid = "786DB5C2-88BF-43B7-B8BE-5F7084E47ABC"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ECommerce/APICallers/SignUpAPi.swift"
+            filePath = "ECommerce/Controllers/CartViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "parseJSON(_:)"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5F3D669D-4DEF-4C53-9054-57BD6B5B5919"
-            shouldBeEnabled = "No"
+            uuid = "6B341BB3-66DB-4308-A32A-5C7A7676A670"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ECommerce/APICallers/SignUpAPi.swift"
+            filePath = "ECommerce/APICallers/CartAPI.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "parseJSON(_:)"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "fecthCartDetails(userId:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2F1BA579-CD20-4A03-ACA7-019B45A57F51"
-            shouldBeEnabled = "No"
+            uuid = "34D075C0-E343-41D2-9D30-4D620B4C3B0F"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ECommerce/APICallers/SignUpAPi.swift"
+            filePath = "ECommerce/APICallers/CartAPI.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "parseJSON(_:)"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "performRequest(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6D6E5EC8-498D-48A4-BECA-00AD11EAAD15"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ECommerce/APICallers/CartAPI.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "performRequest(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AE08C0A2-C31A-4D96-96F0-8D1B13907C13"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ECommerce/Controllers/ProductDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "addToCartAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

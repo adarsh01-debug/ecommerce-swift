@@ -21,21 +21,10 @@ class CartCollectionViewCell: UICollectionViewCell {
     @IBOutlet var cartPrice: UILabel!
     @IBOutlet var cartRating: UILabel!
     @IBOutlet var cartQuantity: UILabel!
-    //@IBOutlet var stepperOutlet: UIStepper!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-//        stepperOutlet.autorepeat = true
-//        stepperOutlet.isContinuous = true
-//
-//        if let maxValue = productStock {
-//            stepperOutlet.maximumValue = Double(maxValue)
-//            stepperOutlet.minimumValue = 1
-//        } else {
-//            stepperOutlet.maximumValue = 0
-//            stepperOutlet.minimumValue = 0
-//        }
     }
     
     
